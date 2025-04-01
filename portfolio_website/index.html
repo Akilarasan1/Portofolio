@@ -3,62 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akil's Portfolio</title>
+    <title>Akil - AI Engineer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <nav class="navbar">
-            <h1>Akil's Portfolio</h1>
-            <ul class="nav-links">
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
+    <!-- Example of Tailwind-ified Header -->
+    <header class="min-h-screen bg-cover bg-center text-white flex flex-col justify-center items-center text-center" style="background-image: url('neural_network.png');">
+        <nav class="fixed top-0 w-full bg-secondary/90 py-4 px-8 flex justify-between items-center z-50">
+            <div class="text-xl font-bold">Akil | AI Engineer</div>
+            <ul class="flex gap-8">
+                <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <!-- Other nav items -->
             </ul>
         </nav>
+        <div class="hero-content">
+            <h1 class="text-5xl font-bold mb-4">Akil <span class="text-primary">AI Engineer</span></h1>
+            <p class="text-xl mb-8">Building Intelligent Solutions with AI & Neural Networks.</p>
+            <a href="#projects" class="bg-primary text-white px-6 py-3 rounded-full font-bold hover:-translate-y-1 hover:shadow-lg transition-all">
+                Explore My Work
+            </a>
+        </div>
+    
+        <!-- Add to head section -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: '#3498db',
+                            secondary: '#2c3e50',
+                            dark: '#1a252f',
+                        },
+                        fontFamily: {
+                            sans: ['Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif'],
+                        },
+                    }
+                }
+            }
+        </script> 
     </header>
-
-    <!-- About Me Section -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Welcome to my portfolio! I am Akil, passionate about technology and innovation. Here, you'll find details about my work, skills, and how to get in touch with me.</p>
-    </section>
+    
 
     <!-- Projects Section -->
     <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Project 1</h3>
-            <p>Description of your amazing project.</p>
-        </div>
-        <div class="project">
-            <h3>Project 2</h3>
-            <p>Description of another fantastic project.</p>
-        </div>
+    <h2>Work and Research</h2>
+    <div class="project">
+        <h3>Crack Detection</h3>
+        <p>Description of your amazing project.</p>
+    </div>
+
+    <div class="project">
+        <h3>Insect Pest</h3>
+        <p>Description of another fantastic project.</p>
     </section>
+
+    <div class="project">
+        <h3>OCR</h3>
+        <p>Description of another fantastic project.</p>
+    </div>
 
     <!-- Skills Section -->
     <section id="skills">
         <h2>Skills</h2>
         <ul>
-            <li>Programming</li>
-            <li>Data Science</li>
-            <li>Web Development</li>
+            <li>Python Programming</li>
+            <li>Machine Learning</li>
+            <li>DeepLearning(Tensorflow and Pytorch)</li>
+            <li>Django</li>
+            <li>Fastapi</li>
+            <li>Flask</li>
+            <li>GitHub</li>
+            <li>SQL</li>
+            <li>Java</li>
+            <li>Jenkins</li>
+            <li>Docker</li>
         </ul>
     </section>
+
+
+    <!-- Add this section where appropriate in your HTML file, typically after Experience -->
+    <section id="education">
+        <h2>Education</h2>
+        <div class="education-item">
+            <h3> Bachelor of Technology / Information Technology</h3>
+            <p class="institution">Mahendra Institute of Technology Namakal</p>
+            <p class="duration">2018 - 2022 | GPA: 7.5/10.0</p>
+            <p class="description">Relevant coursework: Machine Learning, Data Structures, Algorithms, Database Systems</p>
+        </div>
+        <div class="education-item">
+            <h3>Higher Secondary Education</h3>
+            <p class="institution">Anadha Vidhyalaya Matric Higher Secondary School Rasipuram</p>
+            <p class="duration">2017 - 2018 | Percentage: 80%</p>
+        </div>
+    </section>
+
+    <!-- experience -->
+    <section id="experience">
+        <h2>experience</h2>
+        <div class="work">
+            
+            <h3>Behind Force Tech Solution</h3>
+            <p class ="duration">May 27 2024 | Present</p>
+            <p>working in flask ocr, google cloud vision api.</p>
+        </div>
+        <div class="work">
+            <h3>Brain Insight</h3>
+            <p class ="duration">March 6 2023 | April 30 2024</p>
+            <p>Worked on developing machine learning models for predictive analytics.</p>
+        </div>
+    </section>
+        
+    <!-- Certifications -->
+    <section id="interest">
+        <h2>Interest&Hobbies</h2>
+        <p></p>
+    </section>
+   
+    
+
+     <!-- Certifications -->
+     <section id="Certifications">
+        <h2>Certifications</h2>
+        <p>Data Science Course</p>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Passionate AI Engineer with expertise in Machine Learning, Deep Learning, and Web Development.</p>
+    </section>
+
 
     <!-- Contact Section -->
     <section id="contact">
         <h2>Contact</h2>
-        <p>Email: akil@example.com</p>
-        <p>LinkedIn: <a href="#">Your LinkedIn Profile</a></p>
+        <p>Email: akilarasan20@gmail.com</p>
+        <p>GitHub: <a href="https://github.com/Akilarasan1">GitHub Profile</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/akilarasanp-74087121a">LinkedIn Profile</a></p>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Akil. All rights reserved.</p>
+        <p>&copy; 2025 Akil. </p>
     </footer>
 </body>
 </html>
