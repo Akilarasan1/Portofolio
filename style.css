@@ -1,0 +1,238 @@
+/* ===== Base Styles ===== */
+:root {
+    --primary: #1472b1;
+    --secondary: #2c3e50;
+    --dark: #1a252f;
+    --light: #d9e1e9;
+    --gray: #7f8c8d;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    /* background-color: var(--light); */
+    margin: 0;
+    padding: 0;
+    background-color: #FA8BFF;
+    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
+
+}
+
+.hero {
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content h1 span {
+    color: var(--primary);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Section Common Styles ===== */
+section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    /* font-size: 72px;
+    background: -webkit-linear-gradient(#eeeeee, #69afac);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    font-size: 2.5rem;
+    color: var(--secondary);
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+    text-transform: uppercase;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--primary);
+    margin: 0.5rem auto;
+}
+
+/* ===== Projects ===== */
+.project {
+    background: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+}
+
+.project h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+/* ===== Skills ===== */
+#skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+}
+
+#skills li {
+    background-color: white;
+    color: var(--secondary);
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Education ===== */
+.education-item {
+    background: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.education-item h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.institution {
+    font-weight: 600;
+    color: var(--secondary);
+}
+
+.duration {
+    color: var(--gray);
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+/* ===== Experience ===== */
+.work {
+    background: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.work h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+
+/* ===== Footer ===== */
+footer {
+    background-color: var(--dark);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        margin-top: 1rem;
+        gap: 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+} 
+/* Slider base styles */
+.project-slider {
+    position: relative;
+    width: 100%;
+}
+
+.slider-container {
+    display: flex;
+    width: 100%;
+}
+
+.project {
+    min-width: 100%;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+/* Dot indicators */
+.dot-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #cbd5e1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background-color: #3b82f6;
+    transform: scale(1.2);
+}
+.slider-prev,
+.slider-next {
+    z-index: 5000; /* Higher than text content */
+}
+.project p{
+    padding: 1.5rem; /* Adjust spacing */
+    /* min-height: 300px; */
+}
+
