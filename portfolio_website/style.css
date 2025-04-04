@@ -19,45 +19,13 @@ body {
 
 }
 
-.hero {
-    color: white;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-}
 
-.hero-content h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-}
-
-.hero-content h1 span {
-    color: var(--primary);
-}
-
+/* navbar */
 .hero-content p {
     font-size: 1.5rem;
     margin-bottom: 2rem;
 }
 
-.cta-button {
-    display: inline-block;
-    background-color: var(--primary);
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
 
 /* ===== Section Common Styles ===== */
 section {
@@ -68,7 +36,7 @@ section {
 
 h2 {
     /* font-size: 72px;
-    background: -webkit-linear-gradient(#eeeeee, #69afac);
+    background: -webkit-linear-gradient(#3c527a, #56b6b1);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; */
     font-size: 2.5rem;
@@ -85,27 +53,19 @@ h2::after {
     width: 80px;
     height: 4px;
     background: var(--primary);
-    margin: 0.5rem auto;
-}
+    margin: 0.9rem auto;
+} 
 
 /* ===== Projects ===== */
 .project {
     background: white;
-    padding: 2rem;
+    padding: 0.5rem;
     margin-bottom: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
 }
 
-.project:hover {
-    transform: translateY(-5px);
-}
-
-.project h3 {
-    color: var(--primary);
-    margin-bottom: 0.5rem;
-}
 
 /* ===== Skills ===== */
 #skills ul {
@@ -174,6 +134,8 @@ footer {
     padding: 2rem;
 }
 
+
+
 /* ===== Responsive Design ===== */
 @media (max-width: 768px) {
     .navbar {
@@ -190,6 +152,8 @@ footer {
         font-size: 2.5rem;
     }
 } 
+
+
 /* Slider base styles */
 .project-slider {
     position: relative;
@@ -206,6 +170,7 @@ footer {
     flex-shrink: 0;
     transition: transform 0.3s ease;
 }
+
 
 /* Dot indicators */
 .dot-indicators {
@@ -227,6 +192,7 @@ footer {
     background-color: #3b82f6;
     transform: scale(1.2);
 }
+
 .slider-prev,
 .slider-next {
     z-index: 5000; /* Higher than text content */
