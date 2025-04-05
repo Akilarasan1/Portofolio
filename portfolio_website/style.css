@@ -13,7 +13,7 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
-    background:linear-gradient(45deg, #5b5f23 0%, #5bbdd8 52%, #c55a7a 90%);
+    background:linear-gradient(45deg, #507a4b 0%, #614f72 52%, #5a83c5 90%);
     background-size: 400% 400%;
     animation: gradientBG 10s ease infinite;
 }
@@ -101,8 +101,55 @@ h2::after {
 
 .project {
     min-width: 100%;
-    flex-shrink: 0;
+    flex-shrink: 10;
+    background: rgba(255, 255, 255, 0.08); /* subtle transparent white */
+    /* backdrop-filter: 0;  */
+    /* -webkit-backdrop-filter: blur(2px);  */
+    /* Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin:1px; 
+    /* this margin overlay paragraph */
+    color: rgb(142, 117, 117);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease;
+}
+
+.project:hover {
+    transform: scale(1.01);
+}
+
+.project h3 {
+    color: #005eff; /* Highlight title with gold */
+}
+
+.project p {
+    color: rgb(24, 13, 13);
+}
+
+/* #projectssection {
+    background: linear-gradient(120deg, rgba(250, 139, 255, 0.1), rgba(43, 210, 255, 0.1), rgba(43, 255, 136, 0.1));
+    padding: 4rem 1rem;
+}
+ */
+
+ .arrow {
+    font-size: 2rem;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    color: rgb(17, 11, 11);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.arrow:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.2);
 }
 
 /* ===== Skills ===== */
@@ -226,7 +273,7 @@ h2::after {
 /* Job Duration */
 .duration {
     font-size: 14px;
-    color: #FFD700; /* Gold color */
+    color: #003cff; /* Gold color */
     margin-bottom: 10px;
 }
 
