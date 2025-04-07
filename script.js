@@ -129,3 +129,46 @@ document.addEventListener("visibilitychange", function() {
         document.getElementById("secure-image").style.filter = "none";
     }
 });
+
+// mobile menu toggle
+// This function toggles the mobile menu when the button is clicked
+document.getElementById('mobile-menu-button').addEventListener('click', function() {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+    
+    const icon = this.querySelector('i');
+    if (icon.classList.contains('fa-bars')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+    } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+    }
+});
+
+
+document.getElementById('theme-toggle').addEventListener('click', function() {
+    // Toggle the 'dark' class on the html element
+    document.documentElement.classList.toggle('dark');
+    
+    // Update the icon
+    const icon = document.getElementById('theme-icon');
+    if (document.documentElement.classList.contains('dark')) {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+    } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+    }
+    
+    // Save preference to localStorage
+    const isDark = document.documentElement.classList.contains('dark');
+    localStorage.setItem('darkMode', isDark);
+});
+
+// Check for saved user preference
+if (localStorage.getItem('darkMode') === 'true') {
+    document.documentElement.classList.add('dark');
+    document.getElementById('theme-icon').classList.remove('fa-moon');
+    document.getElementById('theme-icon').classList.add('fa-sun');
+}

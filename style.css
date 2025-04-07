@@ -13,7 +13,7 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
-    background:linear-gradient(45deg, #507a4b 0%, #614f72 52%, #5a83c5 90%);
+    /* background:linear-gradient(45deg, #507a4b 0%, #614f72 52%, #5a83c5 90%); */
     background-size: 400% 400%;
     animation: gradientBG 10s ease infinite;
 }
@@ -32,34 +32,10 @@ body::before {
     height: 100%;
     background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0') no-repeat center;
     /* background: url('./images/stars.jpg') no-repeat center; */
-
     background-size: cover;
     opacity: 0.3;
     z-index: -1;
 }
-
-
-/* use if use is that custom images */
-
-/* 
-body {
-    background-color: black;
-    overflow: hidden;
-}
-
-.stars {
-    width: 2px;
-    height: 2px;
-    background: white;
-    position: absolute;
-    animation: twinkle 5s infinite alternate;
-}
-
-@keyframes twinkle {
-    0% { opacity: 0.3; }
-    100% { opacity: 1; }
-}
- */
 
 /* navbar */
 .hero-content p {
@@ -76,10 +52,6 @@ section {
 }
 
 h2 {
-    /* font-size: 72px;
-    background: -webkit-linear-gradient(#3c527a, #56b6b1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; */
     font-size: 2.5rem;
     color: var(--secondary);
     margin-bottom: 2rem;
@@ -103,9 +75,6 @@ h2::after {
     min-width: 100%;
     flex-shrink: 10;
     background: rgba(255, 255, 255, 0.08); /* subtle transparent white */
-    /* backdrop-filter: 0;  */
-    /* -webkit-backdrop-filter: blur(2px);  */
-    /* Safari support */
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 16px;
     padding: 1.5rem;
@@ -128,11 +97,6 @@ h2::after {
     color: rgb(24, 13, 13);
 }
 
-/* #projectssection {
-    background: linear-gradient(120deg, rgba(250, 139, 255, 0.1), rgba(43, 210, 255, 0.1), rgba(43, 255, 136, 0.1));
-    padding: 4rem 1rem;
-}
- */
 
  .arrow {
     font-size: 2rem;
@@ -205,33 +169,7 @@ h2::after {
 }
 
 
-/* ===== Education ===== */
-/* .education-item {
-    background: white;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.education-item h3 {
-    color: var(--primary);
-    margin-bottom: 0.5rem;
-}
-
-.institution {
-    font-weight: 600;
-    color: var(--secondary);
-}
-
-.duration {
-    color: var(--gray);
-    font-style: italic;
-    margin-bottom: 1rem;
-} */
-
-
-
+s
 /* ===== Experience ===== */
 #experience {
     padding: 50px 20px;
@@ -255,7 +193,17 @@ h2::after {
     backdrop-filter: blur(8px); /* Glassmorphism effect */
     border: 1px solid rgba(255, 255, 255, 0.3);
     transition: transform 0.3s ease;
+    color: #1a202c; /* Default text color (gray-800) */
+
 }
+
+/* Dark mode styles */
+.dark .experience-item {
+    background: rgba(30, 41, 59, 0.833); /* gray-800 with opacity */
+    border: 1px solid rgba(51, 65, 85, 0.3); /* gray-700 border */
+    color: #f7fafc; /* Light text color (gray-50) */
+}
+
 
 /* Hover Effect */
 .experience-item:hover {
@@ -268,6 +216,18 @@ h2::after {
     font-weight: bold;
     color: rgb(42, 22, 22);
     margin-bottom: 5px;
+}
+
+
+/* Dark mode styles for list items */
+.dark .experience-item li {
+    color: #e2e8f0; /* Slightly dimmer white (gray-200) */
+}
+
+
+/* Dark mode styles for duration text */
+.dark .experience-item .duration {
+    color: #a0aec0; /* Gray-400 for less important text */
 }
 
 /* Job Duration */
@@ -400,4 +360,3 @@ footer {
     display: flex;
     opacity: 1;
 }
-

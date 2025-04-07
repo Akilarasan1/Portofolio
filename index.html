@@ -7,17 +7,21 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-   
-
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class', // This enables class-based dark mode
             theme: {
                 extend: {
                     colors: {
                         primary: '#3498db',
                         secondary: '#2c3e50',
                         dark: '#1a252f',
+                        // Add black and white theme colors
+                        bw: {
+                            light: '#ffffff',
+                            dark: '#000000'
+                        }
                     },
                     fontFamily: {
                         sans: ['Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif'],
@@ -25,50 +29,84 @@
                 }
             }
         }
-    </script> 
+    </script>
 </head>
 
-<body>
-    <!-- Example of Tailwind-ified Header -->
-    <header class="min-h-screen bg-cover bg-center text-white flex justify-center items-center text-center">
-        <nav class="fixed top-0 w-full bg-black  bg-opacity-45 py-4 px-8 flex justify-end items-center z-50">
-            <ul class="flex gap-8">
-                <li><a href="#about" class="hover:text-primary transition-colors flex items-center gap-2"><i class="fas fa-heart text-lg"></i> 
-                        About me</a></li>
-                <li>
-                    <a href="#skills" class="hover:text-primary transition-colors flex items-center gap-2"><i class="fas fa-code text-lg"></i>
-                        Skills</a></li>
-                <li>
-                    <a href="#experience" class="hover:text-primary transition-colors flex items-center gap-2"><i class="fas fa-briefcase text-lg"></i>
-                        Experience</a></li>
-                <!-- <li>
-                    <a href="#education" class="hover:text-primary transition-colors flex items-center gap-2"><i class="fas fa-graduation-cap text-lg"></i>
-                        Education</a></li> -->
-                <li>
-                    <a href="#contact" class="hover:text-primary transition-colors flex items-center gap-2"><i class="fas fa-envelope text-lg"></i>
-                        Contact</a>
-                </li>
-            </ul>
-        </nav>
+    <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200">
+        <header class="min-h-screen bg-cover bg-center text-white flex justify-center items-center text-center">
+        <nav class="fixed top-0 w-full bg-black bg-opacity-45 py-4 px-8 flex justify-between items-center z-50">
+            <!-- Theme toggle moved to left -->
+            <button id="theme-toggle" class="ml-4 text-white hover:text-primary transition text-xl">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </button>
     
+                    <!-- Desktop menu (right side) -->
+                    <ul class="hidden md:flex gap-8">
+                        <li><a href="#about" class="hover:text-primary transition-colors flex items-center gap-2">
+                            <i class="fas fa-heart text-lg"></i> About me</a>
+                        </li>
+                        <li>
+                            <a href="#skills" class="hover:text-primary transition-colors flex items-center gap-2">
+                            <i class="fas fa-code text-lg"></i> Skills</a>
+                        </li>
+                        <li>
+                            <a href="#experience" class="hover:text-primary transition-colors flex items-center gap-2">
+                            <i class="fas fa-briefcase text-lg"></i> Experience</a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="hover:text-primary transition-colors flex items-center gap-2">
+                            <i class="fas fa-envelope text-lg"></i> Contact</a>
+                        </li>
+                    </ul>
+    
+                    <!-- Mobile menu button (right side) -->
+                    <button id="mobile-menu-button" class="md:hidden text-white hover:text-primary transition text-xl">
+                        <i class="fas fa-bars"></i>
+                    </button>
+            
+                        <!-- Mobile menu dropdown (right-aligned) -->
+                        <div id="mobile-menu" class="hidden absolute top-full right-0 w-48 bg-black bg-opacity-90 py-4 px-8 rounded-bl-lg">
+                            <ul class="flex flex-col gap-4 items-end">
+                                <li><a href="#about" class="hover:text-primary transition-colors flex items-center gap-2">
+                                    <span>About me</span> <i class="fas fa-heart text-lg"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#skills" class="hover:text-primary transition-colors flex items-center gap-2">
+                                    <span>Skills</span> <i class="fas fa-code text-lg"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#experience" class="hover:text-primary transition-colors flex items-center gap-2">
+                                    <span>Experience</span> <i class="fas fa-briefcase text-lg"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#contact" class="hover:text-primary transition-colors flex items-center gap-2">
+                                    <span>Contact</span> <i class="fas fa-envelope text-lg"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+
         <!-- about me section -->
-        <section id = "about">
+         
+        <section id="about" class="bg-white dark:bg-gray-900">
             <div class="hero-content flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
             <!-- Left: Larger Profile Image -->
             <div class="w-70 h-70 md:w-96 md:h-96 rounded-xl overflow-hidden shadow-xl border-4 border-white">
-                <img src="./images/Akilarasan Photo.jpg" alt="Akil's Profile" class="w-full h-full object-cover"  oncontextmenu="return false;">
+                <img src="./images/Akilarasan Photo.jpg" alt="Akil's Image" class="w-full h-full object-cover text-gray-700 dark:text-gray-100"  oncontextmenu="return false;">
             </div>
+
                 <!-- Right: About Me Content -->
-                <div class="about-me-container max-w-lg">
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900 text-center md:text-left border-b-4 border-blue-500 inline-block">
+                <div class="about-me-container max-w-lg mx-4 md:mx-0 mt-8 md:mt-0 bg-white p-8 dark:bg-gray-800 dark:shadow-gray-900">
+
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900 text-center md:text-left border-b-4 border-blue-500 inline-block mb-12 dark:text-white">
                         ABOUT ME
                       </h3>
-                      <p class="text-xs text-black-700 tracking-wide leading-relaxed text-center md:text-left">
+                      <!-- <p class="text-xs text-black tracking-wide leading-relaxed text-center md:text-left"> -->
+                        <p class="text-gray-700 dark:text-gray-100">
                         With 2 years of Experience | I am a software engineer with expertise in AI, deep learning, and backend development, working on building scalable, intelligent systems. 
                         My experience spans two impactful roles, where I designed and implemented high-accuracy OCR models, NLP-driven applications, and real-time data extraction pipelines across domains like insurance and geospatial analytics.
                     </p>
                     
-
                     <!-- CTA Button -->
                     <div class="flex justify-center md:justify-start mt-5">
                         <a href="#projectssection" 
@@ -78,92 +116,87 @@
                         </a>
                     </div>
                 </div>
+
             </div>
         </section>
     </header>
 
         <!-- Projects Section -->
-        <section id="projectssection" class="py-12 px-4 md:px-20 max-w-6xl mx-auto">
-            <h2 class="text-2xl font-bold text-center mb-12">Work and Research</h2>
+        <section id="projectssection" class="py-12 px-4 md:px-20 max-w-6xl mx-auto bg-white dark:bg-gray-900">
+            <h2 class="text-2xl font-bold text-center mb-12 dark:text-white">Work and Research</h2>
+                <div class="project-slider relative overflow-hidden">
+                    <!-- Slider Container -->
+                    <div class="slider-container flex transition-transform duration-500 ease-in-out">
+                        <!-- Project 1 -->
+                        <div class="project bg-white dark:bg-gray-900 w-full flex-shrink-0 p-6 rounded-lg shadow-md dark:shadow-gray-900">
+                            <h3 class="text-xl font-semibold text-primary dark:text-blue-300 mb-3">Crack Detection</h3>
+                            <p class="text-gray-700 dark:text-gray-100">
+                                Developed a deep learning-based crack detection system using YOLOv8, OpenCV, and TensorFlow Object Detection to improve safety in bridge inspections.
+                                Conducted research and experimentation with various optimizers, activation functions, and fine-tuned models and 
+                                different YOLOv8 Models(nano, small, large, extralarge) for better performance.
+                                Utilized Roboflow for data annotation and trained the model on real-world datasets.
+                                Achieved a 30% improvement in detection efficiency compared to traditional inspection methods.
+                            </p>
+                        </div>
+                        
+                        <!-- Project 2 -->
+                        <div class="project bg-white dark:bg-gray-900 w-full flex-shrink-0 p-6 rounded-lg shadow-md dark:shadow-gray-900">
+                            <h3 class="text-xl font-semibold text-primary dark:text-blue-300 mb-3">Insect Pest Detection</h3>
+                            <p class="text-gray-700 dark:text-gray-100">
+                                Built an Elapid MaxEnt model to predict pest species occurrence. 
+                                Used Python, ArcGIS, and ML to analyze species distribution, providing early warnings to farmers.
+                                Insect Pest Detection for Agriculture. Built an Elapid MaxEnt model to predict species occurrence based on environmental factors. 
+                                Used Python, ArcGIS, and ML techniques to analyze species distribution. 
+                                Helped farmers by providing early warnings on pest infestations, reducing crop losses.
+                            </p>
+                        </div>
 
-            <div class="project-slider relative overflow-hidden">
-                <!-- Slider Container -->
-                <div class="slider-container flex transition-transform duration-500 ease-in-out">
-                    <!-- Project 1 -->
-                    <div class="project bg-white w-full flex-shrink-0 p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-semibold text-primary mb-3">Crack Detection</h3>
-                        <p class="text-gray-700">
-                          Developed a deep learning-based crack detection system using YOLOv8, OpenCV, and TensorFlow Object Detection 
-                          to improve safety in bridge inspections. Conducted research and experimentation with various optimizers, 
-                          activation functions, and fine-tuned models and different YOLOv8 Models(nano, small, large, extralarge) for better performance. 
-                          Utilized Roboflow for data annotation and trained the model on real-world datasets. 
-                          Achieved a 30% improvement in detection efficiency compared to traditional inspection methods.
-                        </p>
-                      </div>
-                      
-                    <!-- Project 2 -->
-                    <div class="project bg-white w-full flex-shrink-0 p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-semibold text-primary mb-3">Insect Pest Detection</h3>
-                        <p class="text-gray-700">
-                            Built an Elapid MaxEnt model to predict pest species occurrence. 
-                            Used Python, ArcGIS, and ML to analyze species distribution, providing early warnings to farmers.
-                            Insect Pest Detection for Agriculture. Built an Elapid MaxEnt model to predict species occurrence based on environmental factors. 
-                            Used Python, ArcGIS, and ML techniques to analyze species distribution. 
-                            Helped farmers by providing early warnings on pest infestations, reducing crop losses.
-                        </p>
+                        <!-- Project 3 -->
+                        <div class="project bg-white dark:bg-gray-900 w-full flex-shrink-0 p-6 rounded-lg shadow-md dark:shadow-gray-900">
+                            <h3 class="text-xl font-semibold text-primary dark:text-blue-300 mb-3">OCR System</h3>
+                            <p class="text-gray-700 dark:text-gray-100">
+                                Extracted data from civil IDs, vehicle registrations, driving licenses, medical licenses, and police reports with high accuracy. 
+                                Technologies Used: Python, Flask, NLP, OpenCV, TensorFlow, Google Cloud Vision API. 
+                                Achievements: Improved OCR accuracy to 95% using advanced preprocessing and NLP techniques.
+                                Reduced document processing time from 2 minutes to 30 seconds per document through optimization.
+                            </p>
+                        </div>
+
+                        <!-- Project 4 -->
+                        <div class="project bg-white dark:bg-gray-900 w-full flex-shrink-0 p-6 rounded-lg shadow-md dark:shadow-gray-900">
+                            <h3 class="text-xl font-semibold text-primary dark:text-blue-300 mb-3">Vehicle Plate Detection</h3>
+                            <p class="text-gray-700 dark:text-gray-100">
+                                Collected vehicle plate images and trained a YOLOv8 model to detect license plates. 
+                                Integrated Google Cloud Vision API to recognize and extract plate numbers, and 
+                                exposed the functionality through a RESTful API for seamless access.
+                            </p>
+                        </div>
                     </div>
 
-                    
+                    <!-- Navigation Arrows -->
+                    <div class="slider-nav">
+                        <button id="prevBtn" class="arrow left absolute left-2 top-1/2 -translate-y-1/2 bg-white dark:bg-gray-600 p-2 rounded-full shadow-md hover:bg-gray-100 dark:hover:bg-gray-500 z-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                            </svg>
+                        </button>
 
-                    <!-- Project 3 -->
-                    <div class="project bg-white w-full flex-shrink-0 p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-semibold text-primary mb-3">OCR System</h3>
-                        <p class="text-gray-700">
-                            Extracted data from civil IDs, vehicle registrations, driving licenses, medical licenses, and police reports with high accuracy. 
-                            Technologies Used: Python, Flask, NLP, OpenCV, TensorFlow, Google Cloud Vision API. 
-                            Achievements: Improved OCR accuracy to 95% using advanced preprocessing and NLP techniques.
-                            Reduced document processing time from 2 minutes to 30 seconds per document through optimization.
-                        </p>
+                        <button id="nextBtn" class="arrow right absolute right-2 top-1/2 -translate-y-1/2 bg-white dark:bg-gray-600 p-2 rounded-full shadow-md hover:bg-gray-100 dark:hover:bg-gray-500 z-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </button>
                     </div>
 
-                    <!-- Project 4 -->
-                    <div class="project bg-white w-full flex-shrink-0 p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-semibold text-primary mb-3">Vehicle Plate Detection</h3>
-                        <p class="text-gray-700">
-                          Collected vehicle plate images and trained a YOLOv8 model to detect license plates. 
-                          Integrated Google Cloud Vision API to recognize and extract plate numbers, and 
-                          exposed the functionality through a RESTful API for seamless access.
-                        </p>
-                      </div>
-                      
+                    <!-- Dot Indicators -->
+                    <div class="flex justify-center mt-6 space-x-2" id="dotContainer"></div>
                 </div>
-
-                <!-- Navigation Arrows -->
-                <div class="slider-nav">
-
-                <button id="prevBtn" class="arrow left absolute left-2 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-gray-100 z-10">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-                    </svg>
-                </button>
-
-                <button id="nextBtn" class="arrow right absolute right-2 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-gray-100 z-10">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                    </svg>
-                </button>
-                </div>
-
-                <!-- Dot Indicators -->
-<!--                 <div class="flex justify-center mt-6 space-x-2" id="dotContainer"></div> -->
-            </div>
         </section>
 
-
         <!-- Skills Section -->
-        <section id="skills">
-            <h2 class="text-2xl font-bold">Skills</h2>
-            <ul>
+        <section id="skills" class="bg-white dark:bg-gray-900 text-black dark:text-white">
+            <h2 class="text-2xl font-bold dark:text-white">Skills</h2>
+            <ul class="text-gray-800 dark:text-gray-200">
                 <li data-percent="80%">Python Programming</li>
                 <li data-percent="75%">Machine Learning</li>
                 <li data-percent="75%">Deep Learning (TensorFlow & PyTorch)</li>
@@ -171,7 +204,6 @@
                 <li data-percent="80%">Flask</li>
                 <li data-percent="85%">GitHub</li>
                 <li data-percent="50%">Django</li>
-
                 <li data-percent="50%">SQL</li>
                 <li data-percent="60%">Java</li>
                 <li data-percent="65%">Jenkins</li>
@@ -180,94 +212,92 @@
         </section>
 
        <!-- Experience Section -->
-        <section id="experience">
-            <h2 class="text-3xl font-bold text-center mb-6">Experience</h2>
-            
-            <div class="experience-container">
+       <section id="experience" class="bg-white dark:bg-gray-900 text-black dark:text-white">
+            <h2 class="text-3xl font-bold text-center mb-6 dark:text-white">Experience</h2>
+            <div class="experience-container ">
                 
                 <!-- Job 1 -->
-                <div class="experience-item">
-                    <h3>Behind Force Tech Solution</h3>
-                    <p class="duration">May 27, 2024 - Present</p>
+                <div class="experience-item dark:text-white" >
+                    <h3 class="text-black dark:text-blue-500">Behind Force Tech Solution</h3>
+                    <p class="duration text-gray-900 dark:text-blue-900">May 27, 2024 - Present</p>
                     <ul>
-                        <li>Developed automated OCR solutions for civil IDs, vehicle registrations, etc.</li>
-                        <li>Increased OCR accuracy by **15%** using Google Cloud Vision API & PaddleOCR.</li>
+                        <li>Developed automated OCR solutions using Google Cloud Vision API & PaddleOCR.</li>
+                        <li>Increased OCR accuracy by **15%** using Stanza and spaCy, OpenCV</li>
+                        <li>Developed Spacy ner Model for OCR extraction</li>
                         <li>Optimized RESTful APIs using Flask.</li>
-                        <li>Reduced manual document processing time by **40%**.</li>
+                        <li>Increasing OCR Process execution time using ThreadExecution, Bug fixes and Support.</li>
+                        <li>Worked on **Vehicle Plate Detection** and **Document Verification** projects.</li>
                     </ul>
                 </div>
 
                 <!-- Job 2 -->
                 <div class="experience-item">
-                    <h3>Brain Insight</h3>
-                    <p class="duration">March 6, 2023 - April 30, 2024</p>
+                    <h3 class="text-black dark:text-blue-500">Brain Insight</h3>
+                    <p class="duration text-gray-900 dark:text-blue-900">March 6, 2023 - April 30, 2024</p>
                     <ul>
-                        <li>Led a research project on **Machine Learning & Deep Learning**.</li>
-                        <li>Processed large datasets using **Python & ArcGIS**.</li>
-                        <li>Developed **YOLOv8 & models** for species distribution prediction.</li>
+                        <li>Worked a research project on **Machine Learning & Deep Learning**.</li>
+                        <li>Processed large datasets using **Python, ArcGIS Software & MaxEnt Software**.</li>
+                        <li>Developed **YOLOv8 ResNet & other Object Detection Models** for Crack detection</li>
+                        <li>Developed and Research **Elapid Python & MaxEnt(Species Distrubition Model) ** for Insect Pest</li>
                     </ul>
                 </div>
-
             </div>
         </section>
 
-
-
-    <!-- Experiment Projects -->
+    <!-- Experiment Projects, I worked -->
         <section class="py-12 px-4 max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Projects I’ve Built & Explored</h2>
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">Projects I’ve Built & Explored</h2>
 
-            <div class="grid md:grid-cols-2 gap-8">
+            <div class="grid md:grid-cols-2 gap-8 dark:text-white">
                 <!-- Project 1 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all">
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all dark:bg-gray-800 dark:shadow-gray-900">
                     <h3 class="text-2xl font-semibold text-primary mb-2">
                         <a href="https://github.com/Akilarasan1/GeminiPermitAPI" class="hover:underline">GeminiPermitAPI</a>
                     </h3>
                     
-                    <div class="flex items-center gap-4 text-sm text-gray-500 mb-4">
+                    <div class="flex items-center gap-4 text-sm text-gray-500 mb-4 dark:text-white">
                         <span><i class="fas fa-calendar mr-1"></i> May 2025</span>
                         <span><i class="fas fa-code-branch mr-1"></i> Open Source</span>
                     </div>
 
                     <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">FastAPI</span>
-                        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Gemini AI</span>
-                        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Computer Vision</span>
-                        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Python</span>
+                        <span class="bg-gray-100 dark:bg-gray-700 dark:border dark:border-gray-600 px-3 py-1 rounded-full text-sm dark:text-gray-200">FastAPI</span>
+                        <span class="bg-gray-100 dark:bg-gray-700 dark:border dark:border-gray-600 px-3 py-1 rounded-full text-sm dark:text-gray-200">Gemini AI</span>
+                        <span class="bg-gray-100 dark:bg-gray-700 dark:border dark:border-gray-600 px-3 py-1 rounded-full text-sm dark:text-gray-200">Computer Vision</span>
+                        <span class="bg-gray-100 dark:bg-gray-700 dark:border dark:border-gray-600 px-3 py-1 rounded-full text-sm dark:text-gray-200">Python</span>
                     </div>
 
-                    <p class="text-gray-700 mb-6 leading-relaxed">
+                    <p class="text-gray-700 mb-6 leading-relaxed dark:text-white">
                         Built an AI-powered API with Google Gemini-2.0-Flash and FastAPI to extract structured 
                         data (ID numbers, expiry dates) from document images for automated verification workflows.
                     </p>
-                <div class="mt-6 flex gap-4">
-                    <a href="https://github.com/Akilarasan1/Custom_ner_spacy_model"
-                        class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 flex items-center gap-2 transition-all">
-                        <i class="fab fa-github"></i> View Code
-                    </a>
+
+                    <div class="mt-6 flex gap-4">
+                        <a href="https://github.com/Akilarasan1/Custom_ner_spacy_model"
+                            class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 flex items-center gap-2 transition-all">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                    </div>
                 </div>
-                
-            </div>
 
                 <!-- Project 2 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all">
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all dark:bg-gray-800 dark:shadow-gray-900">
                     <h3 class="text-2xl font-semibold text-primary mb-2">
                         <a href="https://github.com/Akilarasan1/Custom_ner_spacy_model" class="hover:underline">Custom NER with spaCy</a>
                     </h3>
 
-                    <div class="flex items-center gap-4 text-sm text-gray-500 mb-4">
+                    <div class="flex items-center gap-4 text-sm text-gray-500 mb-4 dark:text-white">
                         <span><i class="fas fa-calendar mr-1"></i> May 2025</span>
                         <span><i class="fas fa-code-branch mr-1"></i> Open Source</span>
                     </div>
 
                     <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">FastAPI</span>
-                        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">NLP</span>
-                        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">spaCy</span>
-                        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Python</span>
+                        <span class="bg-gray-100 dark:bg-gray-700 dark:border dark:border-gray-600 px-3 py-1 rounded-full text-sm dark:text-gray-200">NLP</span>
+                        <span class="bg-gray-100 dark:bg-gray-700 dark:border dark:border-gray-600 px-3 py-1 rounded-full text-sm dark:text-gray-200">spaCy</span>
+                        <span class="bg-gray-100 dark:bg-gray-700 dark:border dark:border-gray-600 px-3 py-1 rounded-full text-sm dark:text-gray-200">Python</span>
                     </div>
 
-                    <p class="text-gray-700 mb-6 leading-relaxed">
+                    <p class="text-gray-700 mb-6 leading-relaxed dark:text-white">
                         A Named Entity Recognition (NER) model trained with spaCy to extract specific 
                         entities from documents, improving text-based information retrieval.</p>
 
@@ -279,45 +309,12 @@
                     </div>
 
             </div>
-
-
-             <!-- Project 3 -->
-             <!-- <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all">
-                <h3 class="text-2xl font-semibold text-primary mb-2">
-                    <a href="https://github.com/Akilarasan1/Custom_ner_spacy_model" class="hover:underline">project 3</a>
-                </h3>
-
-                <div class="flex items-center gap-4 text-sm text-gray-500 mb-4">
-                    <span><i class="fas fa-calendar mr-1"></i> May 2025</span>
-                    <span><i class="fas fa-code-branch mr-1"></i> Open Source</span>
-                </div>
-
-                <div class="flex flex-wrap gap-2 mb-4">
-                    <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">FastAPI</span>
-                    <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">NLP</span>
-                    <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">spaCy</span>
-                    <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Python</span>
-                </div>
-
-                <p class="text-gray-700 mb-6 leading-relaxed">
-                    A Named Entity Recognition (NER) model trained with spaCy to extract specific 
-                    entities from documents, improving text-based information retrieval.</p>
-
-                <div class="mt-6 flex gap-4">
-                    <a href="https://github.com/Akilarasan1/Custom_ner_spacy_model"
-                        class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 flex items-center gap-2 transition-all">
-                        <i class="fab fa-github"></i> View Code
-                    </a>
-                </div>
-
-            </div> -->
-
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-12 px-4 bg-blue-50 text-black text-center">
-        <h2 class="text-1.5xl font-bold mb-8">Contact</h2>
+    <section id="contact" class="py-20 px-4 text-black dark:text-white bg-gradient-to-b from-white to-gray-100 dark:from-gray-800 dark:to-gray-900 ">
+        <h2 class="text-1.5xl font-bold mb-8 dark:text-white">Contact</h2>
         <div class="max-w-md mx-auto space-y-4">
             <p class="flex items-center justify-center gap-2">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -365,13 +362,10 @@
         </a>
     </div>
         
-
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Akil. </p>
+    <footer class="bg-white dark:bg-gray-800 text-black dark:text-white">
+                <p>&copy; 2025 Akil. </p>
     </footer>
-    <script type="module" src="./script.js"></script>
-    
     <script src="script.js"></script>
 </body>
 </html>
