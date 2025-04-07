@@ -3,7 +3,7 @@
     --primary: #1472b1;
     --secondary: #2c3e50;
     --dark: #1a252f;
-    --light: #d9e1e9;
+    --light: #cedae7;
     --gray: #7f8c8d;
 }
 
@@ -14,6 +14,7 @@ body {
     margin: 0;
     padding: 0;
     /* background:linear-gradient(45deg, #507a4b 0%, #614f72 52%, #5a83c5 90%); */
+    /* background: --light; */
     background-size: 400% 400%;
     animation: gradientBG 10s ease infinite;
 }
@@ -191,9 +192,9 @@ s
     padding: 15px 20px;
     border-radius: 12px;
     backdrop-filter: blur(8px); /* Glassmorphism effect */
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(206, 208, 209, 0.3);
     transition: transform 0.3s ease;
-    color: #1a202c; /* Default text color (gray-800) */
+    color: #263249; /* Default text color (gray-800) */
 
 }
 
